@@ -1,0 +1,138 @@
+@import "@fontsource-variable/literata/wght.css";
+@import "@fontsource-variable/literata/wght-italic.css";
+@import "@fontsource/be-vietnam-pro/400.css";
+@import "@fontsource/be-vietnam-pro/500.css";
+@import "@fontsource/be-vietnam-pro/600.css";
+@import "@fontsource/be-vietnam-pro/700.css";
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f6f2e9;
+  --color-paper-2: #ede7da;
+  --color-paper-3: #e2dac8;
+  --color-line: #d6cdb8;
+  --color-forest: #315747;
+  --color-forest-dark: #25433a;
+  --color-terracotta: #c96d4f;
+  /* Terracotta đậm hơn, đủ tương phản (≥4.5:1) cho chữ nhỏ trên nền giấy */
+  --color-terracotta-ink: #a24f32;
+  --color-gold: #e4c887;
+  --color-ink: #30332d;
+  --color-ink-soft: #5a5e55;
+
+  --font-serif: "Literata Variable", "Literata", Georgia, "Times New Roman", serif;
+  --font-sans: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+p { text-wrap: pretty; }
+
+::selection { background: var(--color-gold); color: var(--color-ink); }
+
+/* Viền focus rõ ràng, nhất quán (WCAG 2.2: Focus Appearance) */
+:focus-visible {
+  outline: 3px solid var(--color-forest);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.on-dark :focus-visible { outline-color: var(--color-gold); }
+
+.container-page {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 768px) {
+  .container-page { padding-inline: 2rem; }
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--color-terracotta-ink);
+}
+
+/* Nút */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.btn-primary { background: var(--color-forest); color: var(--color-paper); }
+.btn-primary:hover { background: var(--color-forest-dark); }
+.btn-outline { border-color: var(--color-forest); color: var(--color-forest); background: transparent; }
+.btn-outline:hover { background: var(--color-forest); color: var(--color-paper); }
+.btn-light { background: var(--color-paper); color: var(--color-forest); }
+.btn-light:hover { background: var(--color-gold); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.5; cursor: not-allowed; }
+
+.link-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--color-terracotta);
+}
+.link-underline:hover { color: var(--color-forest); text-decoration-color: var(--color-forest); }
+
+/* Chuyển bước khảo sát: nhẹ, ngắn, tắt khi người dùng yêu cầu giảm chuyển động */
+@keyframes step-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.step-in { animation: step-in 0.22s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
