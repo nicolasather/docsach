@@ -170,7 +170,7 @@ export function SurveyFlow() {
 
           <div aria-live="assertive" className="mt-6 min-h-6">
             {error && (
-              <p role="alert" className="border-l-4 border-terracotta bg-paper-2 px-4 py-3 font-medium text-terracotta-ink">
+              <p role="alert" className="border-l-4 border-coral bg-canvas-2 px-4 py-3 font-medium text-coral-ink">
                 {error}
               </p>
             )}

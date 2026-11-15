@@ -28,7 +28,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <div className="mx-auto mt-6 max-w-2xl">
         <p className="eyebrow">{a.minutes} phút đọc</p>
         <h1 className="mt-2 text-4xl sm:text-5xl">{a.title}</h1>
-        <p className="mt-4 font-serif text-xl italic text-forest">{a.kicker}</p>
+        <p className="mt-4 font-display text-xl text-cobalt">{a.kicker}</p>
 
         <div className="mt-10 space-y-9">
           {a.sections.map((s) => (
@@ -36,7 +36,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <h2 className="text-2xl">{s.heading}</h2>
               {s.paragraphs?.map((p) => <p key={p} className="mt-3 text-lg">{p}</p>)}
               {s.list && (
-                <ul className="mt-3 list-disc space-y-2 pl-6 text-lg marker:text-terracotta">
+                <ul className="mt-3 list-disc space-y-2 pl-6 text-lg marker:text-coral">
                   {s.list.map((li) => <li key={li}>{li}</li>)}
                 </ul>
               )}
@@ -44,9 +44,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           ))}
         </div>
 
-        <aside aria-labelledby="tuan-nay" className="mt-12 border-l-4 border-gold bg-paper-2 px-6 py-5">
+        <aside aria-labelledby="tuan-nay" className="mt-12 border-l-4 border-sun bg-canvas-2 px-6 py-5">
           <h2 id="tuan-nay" className="text-xl">Thử trong tuần này</h2>
-          <ul className="mt-3 list-disc space-y-1.5 pl-5 marker:text-terracotta">
+          <ul className="mt-3 list-disc space-y-1.5 pl-5 marker:text-coral">
             {a.thisWeek.map((t) => <li key={t}>{t}</li>)}
           </ul>
         </aside>

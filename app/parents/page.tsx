@@ -16,9 +16,9 @@ export default function ParentsPage() {
         {parentArticles.map((a, i) => (
           <li key={a.slug} className="border-t border-line">
             <Link href={`/parents/${a.slug}`} className="group grid grid-cols-[3rem_1fr] gap-4 py-7">
-              <span className="font-serif text-3xl text-terracotta" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+              <span className="font-display text-3xl text-coral" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
               <span>
-                <span className="block font-serif text-2xl font-semibold group-hover:text-forest group-hover:underline">{a.title}</span>
+                <span className="block font-display text-2xl font-semibold group-hover:text-cobalt group-hover:underline">{a.title}</span>
                 <span className="mt-1.5 block text-ink-soft">{a.kicker}</span>
                 <span className="mt-1 block text-sm text-ink-soft">{a.minutes} phút đọc</span>
               </span>

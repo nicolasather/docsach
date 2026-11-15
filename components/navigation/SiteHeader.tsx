@@ -19,9 +19,9 @@ export function SiteHeader() {
   const isActive = (href: string) => pathname === href || pathname.startsWith(href + "/");
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-paper">
+    <header className="sticky top-0 z-40 border-b-2 border-ink bg-canvas">
       <div className="container-page flex min-h-[4.25rem] items-center justify-between gap-4">
-        <Link href="/" aria-label="Mầm Đọc — về trang chủ" onClick={() => setOpen(false)}>
+        <Link href="/" aria-label="Mầm Đọc, về trang chủ" onClick={() => setOpen(false)}>
           <Logo />
         </Link>
 
@@ -31,9 +31,9 @@ export function SiteHeader() {
               key={l.href}
               href={l.href}
               aria-current={isActive(l.href) ? "page" : undefined}
-              className={`py-2 text-[0.98rem] font-medium hover:text-forest ${
+              className={`py-2 text-[0.98rem] font-medium hover:text-cobalt ${
                 isActive(l.href)
-                  ? "text-forest underline decoration-terracotta decoration-2 underline-offset-8"
+                  ? "text-cobalt underline decoration-coral decoration-[3px] underline-offset-8"
                   : "text-ink"
               }`}
             >
@@ -42,10 +42,10 @@ export function SiteHeader() {
           ))}
           <Link
             href="/wishlist"
-            className="py-2 text-[0.98rem] font-medium text-ink hover:text-forest"
+            className="py-2 text-[0.98rem] font-medium text-ink hover:text-cobalt"
             aria-label={`Sách đã lưu, ${ids.length} cuốn`}
           >
-            Sách đã lưu{ids.length > 0 && <span className="ml-1.5 rounded-sm bg-gold px-1.5 py-0.5 text-sm font-semibold text-ink">{ids.length}</span>}
+            Sách đã lưu{ids.length > 0 && <span className="ml-1.5 rounded-full border-2 border-ink bg-sun px-2 py-0.5 text-sm font-bold text-ink">{ids.length}</span>}
           </Link>
           <Link href="/survey" className="btn btn-primary">Tìm sách cho bé</Link>
         </nav>
@@ -62,7 +62,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <nav id="menu-di-dong" aria-label="Điều hướng chính" className="border-t border-line bg-paper lg:hidden">
+        <nav id="menu-di-dong" aria-label="Điều hướng chính" className="border-t-2 border-ink bg-canvas lg:hidden">
           <ul className="container-page flex flex-col py-3">
             {[...LINKS, { href: "/wishlist", label: `Sách đã lưu${ids.length ? ` (${ids.length})` : ""}` }].map((l) => (
               <li key={l.href}>
@@ -70,7 +70,7 @@ export function SiteHeader() {
                   href={l.href}
                   onClick={() => setOpen(false)}
                   aria-current={isActive(l.href) ? "page" : undefined}
-                  className="block border-b border-line py-3.5 text-lg font-medium"
+                  className="block border-b-2 border-ink/15 py-3.5 text-lg font-semibold"
                 >
                   {l.label}
                 </Link>

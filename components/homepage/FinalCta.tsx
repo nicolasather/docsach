@@ -1,12 +1,15 @@
 import Link from "next/link";
+import { BookPile } from "@/components/three-d/BookPile";
 
 export function FinalCta() {
   return (
-    <section aria-labelledby="cta-title" className="on-dark bg-forest text-paper">
-      <div className="container-page py-16 text-center md:py-24">
-        <h2 id="cta-title" className="mx-auto max-w-2xl text-3xl text-paper sm:text-5xl">Sẵn sàng tìm cuốn sách tiếp theo của bé?</h2>
-        <p className="mx-auto mt-5 max-w-xl text-paper/90">Chỉ năm câu hỏi ngắn. Kết quả hiện ngay, không cần đăng ký.</p>
-        <Link href="/survey" className="btn btn-light mt-8">Bắt đầu khảo sát</Link>
+    <section aria-labelledby="cta-title" className="bg-sun">
+      <div className="container-page grid items-center gap-8 py-16 md:grid-cols-[1.4fr_1fr] md:py-24">
+        <div className="sd-l">
+          <h2 id="cta-title" className="max-w-xl text-4xl sm:text-5xl">Cuốn sách tiếp theo của bé bắt đầu từ năm câu hỏi.</h2>
+          <Link href="/survey" className="btn btn-primary mt-8">Bắt đầu khảo sát</Link>
+        </div>
+        <div className="sd-r hidden md:block"><BookPile count={5} variant={1} /></div>
       </div>
     </section>
   );

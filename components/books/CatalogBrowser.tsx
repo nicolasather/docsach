@@ -11,7 +11,7 @@ import { BookCard } from "./BookCard";
 import { EmptyState } from "@/components/shared/EmptyState";
 
 const sel =
-  "min-h-12 w-full rounded-[4px] border-2 border-line bg-paper px-3 py-2 text-base focus-visible:border-forest";
+  "min-h-12 w-full rounded-[4px] border-2 border-line bg-canvas px-3 py-2 text-base focus-visible:border-cobalt";
 
 export function CatalogBrowser({ all }: { all: Book[] }) {
   const router = useRouter();
@@ -87,7 +87,7 @@ export function CatalogBrowser({ all }: { all: Book[] }) {
       </form>
 
       <section aria-labelledby="ket-qua" className="lg:col-span-9">
-        <h2 id="ket-qua" className="font-serif text-2xl" aria-live="polite">
+        <h2 id="ket-qua" className="font-display text-2xl" aria-live="polite">
           {theme ? `${theme.label}: ` : ""}
           {results.length > 0 ? `${results.length} cuốn sách` : "Không có kết quả"}
         </h2>

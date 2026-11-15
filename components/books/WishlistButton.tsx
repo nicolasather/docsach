@@ -18,7 +18,7 @@ export function WishlistButton({
   const base =
     variant === "outline"
       ? `btn ${saved ? "btn-primary" : "btn-outline"}`
-      : "inline-flex min-h-11 items-center gap-2 py-2 font-semibold text-forest hover:underline";
+      : "inline-flex min-h-11 items-center gap-2 py-2 font-semibold text-cobalt hover:underline";
 
   return (
     <button

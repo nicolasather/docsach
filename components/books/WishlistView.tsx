@@ -22,7 +22,7 @@ export function WishlistView() {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="font-serif text-xl" aria-live="polite">{saved.length} cuốn sách</p>
+        <p className="font-display text-xl" aria-live="polite">{saved.length} cuốn sách</p>
         <button type="button" onClick={clear} className="link-underline min-h-11 font-semibold">Xoá toàn bộ danh sách</button>
       </div>
       {missing > 0 && (

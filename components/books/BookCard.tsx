@@ -25,8 +25,8 @@ export function BookCard({
       </Link>
       <div className="min-w-0">
         {bandLabel && <p className="eyebrow">{bandLabel}</p>}
-        <H className="mt-0.5 font-serif text-xl font-semibold leading-snug sm:text-2xl">
-          <Link href={`/books/${book.slug}`} className="hover:text-forest hover:underline">
+        <H className="mt-0.5 font-display text-xl font-semibold leading-snug sm:text-2xl">
+          <Link href={`/books/${book.slug}`} className="hover:text-cobalt hover:underline">
             {book.title}
           </Link>
         </H>
@@ -47,8 +47,8 @@ export function BookCard({
         </p>
 
         {reasons && reasons.length > 0 && (
-          <div className="mt-4 border-l-[3px] border-gold bg-paper-2 px-4 py-3">
-            <p className="text-sm font-semibold text-forest">Vì sao hợp với bé</p>
+          <div className="mt-4 border-l-[3px] border-sun bg-canvas-2 px-4 py-3">
+            <p className="text-sm font-semibold text-cobalt">Vì sao hợp với bé</p>
             <ul className="mt-1.5 space-y-1 text-[0.95rem] leading-snug">
               {reasons.map((r) => (
                 <li key={r}>{r}</li>

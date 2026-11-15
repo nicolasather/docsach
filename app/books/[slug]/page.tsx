@@ -62,7 +62,7 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
 
       <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:gap-14">
         <div className="mx-auto w-full max-w-[18rem] lg:col-span-4 lg:mx-0 lg:max-w-none">
-          <BookCover book={book} priority />
+          <BookCover book={book} priority className="[--tilt:-7deg] [--tilt-hover:-16deg]" />
         </div>
 
         <div className="lg:col-span-8">
@@ -73,7 +73,7 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
 
           <div className="mt-6 max-w-2xl space-y-4 text-lg">
             <p>{book.description}</p>
-            {book.childFriendlyDescription && <p className="font-serif text-xl italic text-forest">{book.childFriendlyDescription}</p>}
+            {book.childFriendlyDescription && <p className="font-display text-xl text-cobalt">{book.childFriendlyDescription}</p>}
           </div>
 
           <dl className="mt-8 grid max-w-2xl gap-x-8 sm:grid-cols-2">
@@ -87,11 +87,11 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
 
           <div className="mt-6 flex flex-wrap gap-2" aria-label="Chủ đề và thể loại">
             {[...book.genres.map((g) => GENRE_LABEL[g]), ...book.interests.map((i) => INTEREST_LABEL[i])].map((t) => (
-              <span key={t} className="rounded-sm bg-paper-2 px-2.5 py-1 text-sm">{t}</span>
+              <span key={t} className="rounded-sm bg-canvas-2 px-2.5 py-1 text-sm">{t}</span>
             ))}
           </div>
 
-          <section aria-labelledby="mua-sach" className="mt-10 border-t-2 border-forest pt-6">
+          <section aria-labelledby="mua-sach" className="mt-10 border-t-2 border-cobalt pt-6">
             <h2 id="mua-sach" className="text-2xl">Mua sách</h2>
             {hasVerifiedPrice(book) && (
               <p className="mt-2">
@@ -121,7 +121,7 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
           <div className="mt-4 space-y-3 text-[1.02rem]">
             {book.parentNotes ? <p>{book.parentNotes}</p> : <p className="text-ink-soft">Chưa có ghi chú cho cuốn sách này.</p>}
             {book.contentNotes && (
-              <p className="border-l-4 border-gold bg-paper-2 px-4 py-3"><span className="font-semibold">Lưu ý nội dung: </span>{book.contentNotes}</p>
+              <p className="border-l-4 border-sun bg-canvas-2 px-4 py-3"><span className="font-semibold">Lưu ý nội dung: </span>{book.contentNotes}</p>
             )}
           </div>
         </section>

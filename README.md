@@ -21,6 +21,15 @@ npm run dev        # mở http://localhost:3000
 | `npm test` | Kiểm thử bộ máy gợi ý, bộ lọc, bộ kiểm tra dữ liệu |
 | `npm run lint` / `npm run typecheck` | Kiểm tra mã nguồn |
 
+## Giao diện (bản thiết kế lại)
+
+- Phong cách "bìa sách tranh": bốn màu đặc (xanh cobalt, vàng, san hô, bạc hà) trên nền kem, viền mực, bóng cứng. Không chuyển sắc, không phát sáng, không kính mờ.
+- Chữ: Bricolage Grotesque (tiêu đề) và Be Vietnam Pro (nội dung), đều có đủ dấu tiếng Việt.
+- Chiều sâu: sách 3D bằng CSS thuần (`components/three-d/Book3D.tsx`, sáu mặt, không thư viện, không canvas). Dùng cho cảnh hero, bìa sách, chồng sách, bậc thang lớp.
+- Chuyển động: scroll-driven animation của CSS (`animation-timeline: view()`), mỗi loại một nhịp. Trình duyệt không hỗ trợ thì nội dung hiện sẵn. Tắt hết khi người dùng bật `prefers-reduced-motion`. Chỉ có hero nghiêng theo con trỏ dùng JavaScript (`HeroScene.tsx`).
+- Hình hero, bậc thang lớp, chồng sách là tranh minh hoạ thương hiệu, không phải bìa sách thật. Bìa thật chỉ hiện khi `coverUrl` có trong dữ liệu.
+- Bảng màu và độ tương phản (WCAG) ghi ở đầu `app/globals.css`.
+
 ## Các trang
 
 `/` Trang chủ · `/survey` Khảo sát · `/recommendations` Kết quả · `/books` Khám phá và lọc · `/books/[slug]` Chi tiết sách · `/collections` và `/collections/[slug]` Bộ sưu tập · `/parents` và `/parents/[slug]` Góc phụ huynh · `/wishlist` Sách đã lưu

@@ -8,7 +8,7 @@ interface Opt<T extends string | number | null> {
 }
 
 const tile =
-  "flex min-h-[3.5rem] w-full cursor-pointer items-center gap-3 rounded-[4px] border-2 border-line bg-paper px-4 py-3 text-left text-[1.02rem] leading-snug transition-colors hover:border-forest peer-checked:border-forest peer-checked:bg-forest peer-checked:text-paper peer-focus-visible:outline peer-focus-visible:outline-[3px] peer-focus-visible:outline-offset-2 peer-focus-visible:outline-forest peer-disabled:cursor-not-allowed peer-disabled:opacity-45 peer-disabled:hover:border-line peer-checked:[&_svg]:opacity-100";
+  "flex min-h-[3.5rem] w-full cursor-pointer items-center gap-3 rounded-[8px] border-2 border-ink bg-canvas px-4 py-3 shadow-[0_3px_0_var(--color-ink)] active:translate-y-[3px] active:shadow-none text-left text-[1.02rem] leading-snug transition-[transform,box-shadow,background-color] duration-150 hover:bg-canvas-2 peer-checked:translate-y-[3px] peer-checked:shadow-none peer-checked:bg-cobalt peer-checked:text-canvas peer-focus-visible:outline peer-focus-visible:outline-[3px] peer-focus-visible:outline-offset-2 peer-focus-visible:outline-cobalt peer-disabled:cursor-not-allowed peer-disabled:opacity-45 peer-disabled:hover:bg-canvas peer-checked:[&_svg]:opacity-100";
 
 const Check = () => (
   <svg viewBox="0 0 20 20" className="h-5 w-5 shrink-0 opacity-0" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.4">
@@ -38,7 +38,7 @@ export function SingleChoice<T extends string | number | null>({
   const cols = { 1: "", 2: "sm:grid-cols-2", 3: "sm:grid-cols-3", 5: "grid-cols-2 sm:grid-cols-5" }[columns];
   return (
     <fieldset className="min-w-0">
-      <legend className="mb-1 font-serif text-xl font-semibold">{legend}</legend>
+      <legend className="mb-1 font-display text-xl font-semibold">{legend}</legend>
       {hint && <p className="mb-3 text-[0.95rem] text-ink-soft">{hint}</p>}
       <div className={`mt-3 grid gap-3 ${cols}`}>
         {options.map((o) => (
@@ -82,10 +82,10 @@ export function MultiChoice<T extends string>({
   const cols = { 1: "", 2: "sm:grid-cols-2", 3: "sm:grid-cols-2 lg:grid-cols-3" }[columns];
   return (
     <fieldset className="min-w-0">
-      <legend className="mb-1 font-serif text-xl font-semibold">{legend}</legend>
+      <legend className="mb-1 font-display text-xl font-semibold">{legend}</legend>
       {hint && <p className="mb-1 text-[0.95rem] text-ink-soft">{hint}</p>}
       {max !== undefined && (
-        <p className="mb-3 text-sm font-semibold text-forest" aria-live="polite">
+        <p className="mb-3 text-sm font-semibold text-cobalt" aria-live="polite">
           Đã chọn {values.length}/{max}
           {full ? ". Bỏ chọn một mục để chọn mục khác." : ""}
         </p>

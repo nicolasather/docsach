@@ -2,7 +2,7 @@ export function ProgressIndicator({ step, total, labels }: { step: number; total
   return (
     <div>
       <div className="flex items-baseline justify-between">
-        <p className="text-sm font-semibold text-forest" aria-hidden="true">
+        <p className="text-sm font-semibold text-cobalt" aria-hidden="true">
           Bước {step + 1} / {total}
         </p>
         <p className="text-sm text-ink-soft" aria-hidden="true">{labels[step]}</p>
@@ -18,7 +18,7 @@ export function ProgressIndicator({ step, total, labels }: { step: number; total
         style={{ gridTemplateColumns: `repeat(${total}, 1fr)` }}
       >
         {Array.from({ length: total }, (_, i) => (
-          <span key={i} className={`h-1.5 rounded-[1px] transition-colors ${i <= step ? "bg-forest" : "bg-paper-3"}`} />
+          <span key={i} className={`h-1.5 rounded-[1px] transition-colors ${i <= step ? "bg-cobalt" : "bg-canvas-3"}`} />
         ))}
       </div>
     </div>
